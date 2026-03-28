@@ -1,5 +1,5 @@
 {
-  "name": "sbn_fastpic_redirect",
+  "name": "fastpic_redirect",
   "version": "1.0",
   "description": "Skip spam and view the full image on fastpic image hosting",
   "permissions": ["webNavigation"],
@@ -7,19 +7,16 @@
     "service_worker": "service_worker.js"
   },
   "icons": {
-    "128": "icons/sbn_on.png"
+    "128": "icons/on.png"
   },
   "action": {
-    "default_icon": "icons/sbn_on.png",
-    "default_title": "sbn redirect"
+    "default_icon": "icons/on.png",
+    "default_title": "fastpic redirect"
   },
   "content_scripts": [
     {
       "matches": [
-        "*://fastpic.org/fullview/*",
-        "*://fastpic.ru/fullview/*",
-        "*://*.fastpic.org/fullview/*",
-        "*://*.fastpic.ru/fullview/*"
+        "*://*.fastpic.*/fullview/*"
       ],
       "js": ["content.js"],
       "run_at": "document_end"

@@ -1,5 +1,5 @@
-const ICON_ON = "icons/sbn_on.png";
-const ICON_OFF = "icons/sbn_off.png";
+const ICON_ON = "icons/on.png";
+const ICON_OFF = "icons/off.png";
 
 let enabled = true;
 
@@ -15,7 +15,7 @@ function transformUrl(rawUrl) {
 
 chrome.action.onClicked.addListener(() => {
   enabled = !enabled;
-  console.log("sbn_redirect:", enabled ? "on" : "off");
+  console.log("fastpic_redirect:", enabled ? "on" : "off");
   chrome.action.setIcon({ path: enabled ? ICON_ON : ICON_OFF });
 });
 
@@ -24,7 +24,7 @@ chrome.webNavigation.onBeforeNavigate.addListener(
     if (!enabled) return;
     const newUrl = transformUrl(details.url);
     if (newUrl) {
-      console.log("sbn_redirect:", details.url, "->", newUrl);
+      console.log("fastpic_redirect:", details.url, "->", newUrl);
       chrome.tabs.update(details.tabId, { url: newUrl });
     }
   },
