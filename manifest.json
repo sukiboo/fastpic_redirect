@@ -1,18 +1,29 @@
 {
-	"name": "sbn_fastpic_redirect",
-	"version": "0.6",
-	"description": "Skip spam and view the full image on fastpic image hosting",
-	"permissions": ["tabs","webNavigation"],
-	"background": {
-		"scripts": ["fastpic_redirect.js"],
-		"persistent": false
-	},
-	"icons": {
-		"128": "icons/sbn_on.png"
-	},
-	"browser_action": {
-		"default_icon": "icons/sbn_on.png",
-		"default_title": "sbn redirect"
-	},
-	"manifest_version": 2
+  "name": "sbn_fastpic_redirect",
+  "version": "1.0",
+  "description": "Skip spam and view the full image on fastpic image hosting",
+  "permissions": ["webNavigation"],
+  "background": {
+    "service_worker": "service_worker.js"
+  },
+  "icons": {
+    "128": "icons/sbn_on.png"
+  },
+  "action": {
+    "default_icon": "icons/sbn_on.png",
+    "default_title": "sbn redirect"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://fastpic.org/fullview/*",
+        "*://fastpic.ru/fullview/*",
+        "*://*.fastpic.org/fullview/*",
+        "*://*.fastpic.ru/fullview/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "manifest_version": 3
 }
