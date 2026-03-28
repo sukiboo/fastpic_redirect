@@ -16,7 +16,8 @@
   "content_scripts": [
     {
       "matches": [
-        "*://*.fastpic.*/fullview/*"
+        "*://*.fastpic.org/fullview/*",
+        "*://*.fastpic.ru/fullview/*"
       ],
       "js": ["content.js"],
       "run_at": "document_end"
