@@ -1,6 +1,6 @@
 {
   "name": "fastpic_redirect",
-  "version": "1.0",
+  "version": "1.1",
   "description": "Skip spam and view the full image on fastpic image hosting",
   "permissions": ["declarativeNetRequest"],
   "host_permissions": [
