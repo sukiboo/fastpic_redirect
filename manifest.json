@@ -2,7 +2,11 @@
   "name": "fastpic_redirect",
   "version": "1.0",
   "description": "Skip spam and view the full image on fastpic image hosting",
-  "permissions": ["webNavigation"],
+  "permissions": ["declarativeNetRequest"],
+  "host_permissions": [
+    "*://*.fastpic.org/*",
+    "*://*.fastpic.ru/*"
+  ],
   "background": {
     "service_worker": "service_worker.js"
   },
