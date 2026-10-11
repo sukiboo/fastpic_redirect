@@ -1,6 +1,6 @@
 # fastpic_redirect
 
-*It was dead but I suddently need it again 6 years later* 🙃
+*It was dead but I suddenly need it again 6 years later* 🙃
 
 A Chrome/Chromium extension (Manifest V3) that skips the advertisement on
 `fastpic.org` image hosting and shows the full image directly.
@@ -8,9 +8,10 @@ Requires Chrome 84 or later.
 
 ### How it works
 
-When you navigate to a `fastpic.org` image page, the extension redirects from
-the `/view/` page to `/fullview/` and removes the interstitial overlay, so
-the image is shown immediately. Click the toolbar icon to toggle on or off.
+When you navigate to a `fastpic.org` image page (`/view/` or `/fullview/`), the
+extension reads the link to the image file from the page and goes straight to
+it, so the image is shown immediately. If `fastpic.org` returns an error page,
+the extension retries a few times. Click the toolbar icon to toggle on or off.
 
 Without `fastpic_redirect` | With `fastpic_redirect`
 :---: | :---:
